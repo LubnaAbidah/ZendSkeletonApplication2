@@ -1,0 +1,32 @@
+
+<?php
+$title = 'Informasi VCD';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+<a href="<?php echo $this->url('Rental', array('action'=>'add'));?>">
+Tambah vcd</a>
+</p>
+<table class="table">
+<tr>
+<th>VCD ID</th>
+<th>Judul</th>
+<th>Kategori</th>
+<th>Deskripsi</th>
+<th>Banyak VCD</th>
+<th>Harga VCD</th>
+
+</tr>
+<?php foreach ($datavcd as $r) : ?>
+ <tr>
+<td><?php echo $this->escapeHtml($r->idVcd);?></td>
+<td><?php echo $this->escapeHtml($r->judulVcd);?></td>
+<td><?php echo $this->escapeHtml($r->kategori);?></td>
+<td><?php echo $this->escapeHtml($r->deskripsi);?></td>
+<td><?php echo $this->escapeHtml($r->bykCD);?></td>
+<td><?php echo $this->escapeHtml($r->hargaVcd);?></td>
+
+</tr>
+<?php endforeach; ?>
+</table>

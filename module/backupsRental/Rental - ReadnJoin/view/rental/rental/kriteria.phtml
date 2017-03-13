@@ -1,0 +1,26 @@
+<?php
+
+$title = 'Kriteria Peminjaman VCD';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<table class="table">
+<tr>
+<th>ID Pelanggan</th>
+<th>Nama Pelanggan</th>
+<th>Judul VCD</th>
+<th>Tanggal Pinjam</th>
+ <th>&nbsp;</th>
+</tr>
+<?php foreach ($peminjamankriteria as $r) : ?>
+ <tr>
+<td><?php echo $this->escapeHtml($r->idPelanggan);?></td>
+<td><?php echo $this->escapeHtml($r->namaPelanggan);?></td>
+<td><?php echo $this->escapeHtml($r->judulVcd);?></td>
+<td><?php echo $this->escapeHtml($r->tglPeminjaman);?></td>
+<td>
+</td>
+</tr>
+<?php endforeach; ?>
+</table>
+

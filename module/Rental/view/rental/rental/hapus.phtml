@@ -1,0 +1,24 @@
+<?php
+
+$title = 'Hapus' . $idvcd;
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php if(!$this->adakesalahan):?>
+<p>Yakin akan menghapus <?php echo $this->escapeHtml($datavcd->judulVcd); ?>?</p>
+<?php
+$url = $this->url('Rental', array(
+'action' => 'hapus',
+'id' => $this->idvcd,
+));
+?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+<input type="hidden" name="idVcd" value="<?php echo $datavcd->idVcd; ?>" />
+<input type="submit" name="hapus" value="Ya" />
+<input type="submit" name="hapus" value="Tidak" />
+</div>
+</form>
+<?php else:?>
+<p>VCD dengan id: <?php echo $idvcd;?> tidak ditemukan</p>
+<?php endif;?>

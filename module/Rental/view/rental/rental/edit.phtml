@@ -1,0 +1,55 @@
+<?php
+
+$title = 'Edit ' . $this->idvcd;
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('Rental',
+array('action' => 'edit',
+	 'id' => $this->idvcd,
+)));
+$form->setAttribute('method', 'post');
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<?php if ($this->error): ?>
+<p class="error">
+Ada kesalahan saat pengisian Form silahkan diperbaiki terlebih dahulu
+</p>
+<?php endif ?>
+<dl class="datavcd_form">
+<dt><?php echo $this->formLabel($form->get('idVcd')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('idVcd'));
+echo $this->formElementErrors($form->get('idVcd'));
+?></dd>
+<dt><?php echo $this->formLabel($form->get('judulVcd')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('judulVcd'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('kategori')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('kategori'));
+?></dd>
+<dt><?php echo $this->formLabel($form->get('deskripsi')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('deskripsi'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('bykCD')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('bykCD'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('hargaVcd')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('hargaVcd'));?></dd>
+<dd><?php
+echo $this->formElement($form->get('submit'));?>
+</dd>
+</dl>
+<?php echo $this->form()->closeTag() ?>
+
